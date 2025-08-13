@@ -1,0 +1,49 @@
+*{margin: 0;padding: 0;}
+body{
+    background-color: aliceblue;
+}
+.nts {
+  -webkit-user-select: none;  /* Safari */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* IE/Edge */
+  user-select: none;          /* 标准语法 */
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.fl{
+    flex: left;
+}
+.fr{
+    flex: right;
+}
+.clear::after{
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+}
+.mt{
+    margin-top: 20px;
+}
+.mb{
+    margin-bottom: 20px;
+}
+.mr{
+    margin-right: 20px;
+}
+.ml{
+    margin-left: 20px;
+}
+.pt{
+    padding-top: 20px;
+}
+.pb{
+    padding-bottom: 20px;
+}
+.pr{
+    padding-right: 20px;
+}
+.pl{
+    padding-left: 20px;
+}
