@@ -27,12 +27,33 @@
 <script setup lang="ts">
 import { ref } from "vue"
 import { useUserStore } from "@/store/auth"
+import { useTapsStore } from "@/store/taps"
 import { storeToRefs } from "pinia"
-import {useRouter} from "vue-router"
+import { useRouter, useRoute} from "vue-router"
 const router = useRouter()
+const route = useRoute()
 const userStore = useUserStore()
+const tapsStore = useTapsStore()
 const { username } = storeToRefs(userStore)
+const { addTab } = tapsStore
 const info = ref(5)
+
+function findObject(menu:any[], url: string) {
+    for (const item of menu) {
+        if (item.url === url) {
+            return item
+        }
+        if (item.children) {
+            const result:any = findObject(item.children, url)
+            if (result) {
+                return result
+            }
+        }
+    }
+}
+const {name,url,icon} =findObject(userStore.menu,route.path)
+addTab(name,url,icon)
+
 const handleCommand = (command: string) => {
     if (command === "user") {
         router.push("/personal")

@@ -12,7 +12,7 @@ router.beforeEach((to) => {
         if(to.path === '/login'){
             return {path: '/'}
         }
-        if(to.meta?.needAuth && !userStore.roles.some((role: string) => (to.meta.roles as string[]).includes(role))){
+        if(to.meta?.needAuth && to.meta.roles && Array.isArray(to.meta.roles) && !userStore.roles.some((role: string) => (to.meta.roles as string[]).includes(role))){
             return {path: '/'}
         }else{
             // 不需要权限

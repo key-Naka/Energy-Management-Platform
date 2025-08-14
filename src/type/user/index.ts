@@ -4,3 +4,5 @@ interface MenuType{
     url: string
     children?: MenuType[]
 }
+
+export type {MenuType}

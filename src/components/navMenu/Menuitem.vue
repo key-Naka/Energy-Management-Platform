@@ -32,9 +32,10 @@ export default defineComponent({
     },
     setup() {
         const tapsStore = useTapsStore()
-        const { addTab } = tapsStore
+        const { addTab,setcurrentTap } = tapsStore
         const add = (name: string, url: string, icon: string) => {
             addTab(name, url, icon)
+            setcurrentTap(name,url)
         }
         return {
             add

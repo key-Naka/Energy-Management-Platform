@@ -22,13 +22,14 @@ import { storeToRefs } from 'pinia'
 import { RouterView } from 'vue-router'
 const tapsStore = useTapsStore()
 const {taps,currentTap} = storeToRefs(tapsStore)
-const {setcurrentTap} = tapsStore
+const {setcurrentTap,removeTap} = tapsStore
 const handleClick = ({index}:{index:number}) => {
     router.push(taps.value[index].url)
     setcurrentTap(taps.value[index].name, taps.value[index].url)
 }
 const remove = (targetName: string) => {
-    
+    removeTap(targetName)
+    router.push(currentTap.value.url)
 }
 
 </script>
