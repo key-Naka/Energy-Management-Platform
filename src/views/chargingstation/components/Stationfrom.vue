@@ -136,7 +136,7 @@ const handleConfirm = () => {
     })
 }
 const title= ref<string>("")
-watch(()=>props.dialogVisible,(newVal)=>{
+watch(()=>props.dialogVisible,()=>{
     ruleForm.value=rowData.value
     if(rowData.value.name){
         ruleForm.value=rowData.value

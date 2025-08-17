@@ -126,7 +126,6 @@ const handleReset = () => {
 }
 const handleSizeChange = (pageSize: number) => {
     pageInfo.pageSize = pageSize
-
     loadData()
 }
 
