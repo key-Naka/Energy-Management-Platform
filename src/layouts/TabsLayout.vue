@@ -13,12 +13,18 @@
       </template>
     </el-tab-pane>
   </el-tabs>
-  <RouterView></RouterView>
+  <RouterView v-slot="{Component}">
+    <KeepAlive>
+      <component :is="Component" :key="$route.name" v-if="$route.meta.keepAlive"/>
+    </KeepAlive>
+    <component :is="Component" :key="$route.name" v-if="!$route.meta.keepAlive"/>
+  </RouterView>
 </template>
 <script setup lang="ts">
 import router from '@/router'
 import { useTapsStore} from '@/store/taps'
 import { storeToRefs } from 'pinia'
+import { KeepAlive } from 'vue'
 import { RouterView } from 'vue-router'
 const tapsStore = useTapsStore()
 const {taps,currentTap} = storeToRefs(tapsStore)
