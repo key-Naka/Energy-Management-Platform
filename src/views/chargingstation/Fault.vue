@@ -95,7 +95,7 @@ function checkCount(type: number) {
 const allCount = computed(() => {
     return dataList.value.length
 })
-const handleChange = (val: number) => {
+const handleChange = () => {
     dataListcopy.value = dataList.value
     if (radio.value != 0) {
         dataListcopy.value = dataListcopy.value.filter((item: any) => item.status == radio.value)

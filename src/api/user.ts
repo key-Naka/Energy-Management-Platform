@@ -2,7 +2,7 @@ import {post} from '@/utils/http'
 
 const Api = {
     login: '/login',
-} as const; // as const 将接口定义成常量
+} as const; 
 
 
 interface LoginParams {
