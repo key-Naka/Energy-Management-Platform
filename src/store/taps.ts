@@ -30,7 +30,6 @@ export const useTapsStore = defineStore('taps', () => {
         }else{
             currentTap.value =taps.value[taps.value.findIndex(taps=> taps.name === name)-1]
         }
-        
         taps.value = taps.value.filter((tap) => tap.name !== name)
         
     }

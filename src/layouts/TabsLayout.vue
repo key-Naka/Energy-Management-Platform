@@ -39,5 +39,3 @@ const remove = (targetName: string) => {
 }
 
 </script>
-<style scoped lang="scss">
-</style>
