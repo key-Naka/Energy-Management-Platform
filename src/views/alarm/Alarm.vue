@@ -21,7 +21,7 @@
             </el-descriptions-item>
             <el-descriptions-item label="操作">
                 <el-button @click="drawer = true" :type="item.status == 2 ? 'warning' : 'primary'"> {{
-                    item.status == 1 ? "指派" : (item.status==2?"催办":"查看") }} </el-button>
+                    item.status == 1 ? "指派" : (item.status == 2 ? "催办" : "查看") }} </el-button>
             </el-descriptions-item>
         </el-descriptions>
     </el-card>
@@ -99,13 +99,13 @@
     </el-drawer>
 </template>
 <script setup lang="ts">
-import { ref,onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { alarmListApi } from '@/api/alarm';
-import {getLabel} from '@/views/alarm/fieldLabelMap'
+import { getLabel } from '@/views/alarm/fieldLabelMap'
 import StepForm from '@/components/stepForm/stepForm.vue'
 import type { FormInstance } from 'element-plus'
 import { ElMessage } from 'element-plus'
-interface AlarmListType{
+interface AlarmListType {
     description: string,
     address: string,
     equNo: string,
@@ -115,83 +115,83 @@ interface AlarmListType{
     status: number,
 }
 
-const radio1 = ref < number > (1)
+const radio1 = ref<number>(1)
 const alarmList = ref<AlarmListType[]>([])
-onMounted(async() => {
-    const {data} = await alarmListApi()
+onMounted(async () => {
+    const { data } = await alarmListApi()
     alarmList.value = data
 })
 const drawer = ref<boolean>(false)
 
-const steps=[
-    {title:"基本信息"},
-    {title:"审批信息"},
-    {title:"负责人信息"},
+const steps = [
+    { title: "基本信息" },
+    { title: "审批信息" },
+    { title: "负责人信息" },
 ]
 
-const formData=ref({
-    basicInfo:{
-        name:"",
-        email:"",
-        tel:"",
-        no:"",
-        urgent:true,
-        other:[],
-        remarks:""
+const formData = ref({
+    basicInfo: {
+        name: "",
+        email: "",
+        tel: "",
+        no: "",
+        urgent: true,
+        other: [],
+        remarks: ""
     },
-    shenpi:{
-        a:"",
-        b:""
+    shenpi: {
+        a: "",
+        b: ""
     },
-    info:{
-        person:"",
-        tel:""
+    info: {
+        person: "",
+        tel: ""
     }
 })
 
-const basicRules={
-    name:[
-        {required:true,message:"请输入姓名",trigger:"blur"}
+const basicRules = {
+    name: [
+        { required: true, message: "请输入姓名", trigger: "blur" }
     ],
-    email:[
-        {required:true,message:"请输入邮箱",trigger:"blur"}
+    email: [
+        { required: true, message: "请输入邮箱", trigger: "blur" }
     ],
-    tel:[
-        {required:true,message:"请输入电话",trigger:"blur"}
+    tel: [
+        { required: true, message: "请输入电话", trigger: "blur" }
     ],
-    no:[
-        {required:true,message:"请输入工号",trigger:"blur"}
+    no: [
+        { required: true, message: "请输入工号", trigger: "blur" }
     ]
 }
 
-const shenpiRules={
-    a:[
-        {required:true,message:"不能为空",trigger:"blur"}
+const shenpiRules = {
+    a: [
+        { required: true, message: "不能为空", trigger: "blur" }
     ],
-    b:[
-        {required:true,message:"不能为空",trigger:"blur"}
-    ],
-}
-
-const infoRules={
-    person:[
-        {required:true,message:"不能为空",trigger:"blur"}
-    ],
-    tel:[
-        {required:true,message:"不能为空",trigger:"blur"}
+    b: [
+        { required: true, message: "不能为空", trigger: "blur" }
     ],
 }
 
-const form1=ref<FormInstance>()
-const form2=ref<FormInstance>()
-const form3=ref<FormInstance>()
+const infoRules = {
+    person: [
+        { required: true, message: "不能为空", trigger: "blur" }
+    ],
+    tel: [
+        { required: true, message: "不能为空", trigger: "blur" }
+    ],
+}
 
-const handleSubmit=()=>{
+const form1 = ref<FormInstance>()
+const form2 = ref<FormInstance>()
+const form3 = ref<FormInstance>()
+
+const handleSubmit = () => {
     console.log(formData.value);
     ElMessage({
-    message: '指派成功',
-    type: 'success',
-  });
-  drawer.value=false;
+        message: '指派成功',
+        type: 'success',
+    });
+    drawer.value = false;
 }
 </script>

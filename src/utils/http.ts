@@ -12,5 +12,5 @@ function post(url: string, data?: any): Promise<ResponseData> {
 }
 export {
     get,
-    post  
+    post
 }

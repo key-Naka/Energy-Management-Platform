@@ -97,7 +97,7 @@ const rules = reactive<FormRules<MapType>>({
         { required: true, message: "经度不能为空", trigger: "blur" },
         { type: 'number', message: "经度必须为数字", trigger: "blur" },
         {
-            validator: ( value: any, callback: any) => {
+            validator: (value: any, callback: any) => {
                 if (value && (value < -180 || value > 180)) {
                     callback(new Error('经度范围应在-180到180之间'));
                 } else {
@@ -110,7 +110,7 @@ const rules = reactive<FormRules<MapType>>({
         { required: true, message: "维度不能为空", trigger: "blur" },
         { type: 'number', message: "维度必须为数字", trigger: "blur" },
         {
-            validator: ( value: any, callback: any) => {
+            validator: (value: any, callback: any) => {
                 if (value && (value < -90 || value > 90)) {
                     callback(new Error('纬度范围应在-90到90之间'));
                 } else {

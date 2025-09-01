@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import type { RowType } from "@/type/station";
 import { ref } from "vue";
-export const useStationStore = defineStore("station",()=> {
+export const useStationStore = defineStore("station", () => {
     const rowData = ref<RowType>({
         name: '',
         id: '',

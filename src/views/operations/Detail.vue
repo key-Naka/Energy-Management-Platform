@@ -1,14 +1,14 @@
 <template>
     <el-card>
         <el-descriptions :title="`订单编号：${$route.query.orderNo}`">
-            <el-descriptions-item label="订单编号">{{$route.query.orderNo}}</el-descriptions-item>
+            <el-descriptions-item label="订单编号">{{ $route.query.orderNo }}</el-descriptions-item>
             <el-descriptions-item label="设备编号">C2274</el-descriptions-item>
             <el-descriptions-item label="订单日期">2024-10-01</el-descriptions-item>
             <el-descriptions-item label="站点名称">
                 <el-tag size="small">北京西单充电站</el-tag>
             </el-descriptions-item>
             <el-descriptions-item label="开始时间">
-               08:00:23
+                08:00:23
             </el-descriptions-item>
             <el-descriptions-item label="结束时间">09:10:11</el-descriptions-item>
             <el-descriptions-item label="订单金额(元)">66.5</el-descriptions-item>
@@ -31,5 +31,5 @@
             <el-descriptions-item label="备注">暂无</el-descriptions-item>
         </el-descriptions>
     </el-card>
-    
+
 </template>

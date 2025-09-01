@@ -61,7 +61,7 @@ const searchParams = ref({
     name: ''
 })
 const { dataList, loading, totals, pageInfo,
-    loadData, handleSizeChange, handleCurrentChange,resetPagination } = useHttp("/member", searchParams)
+    loadData, handleSizeChange, handleCurrentChange, resetPagination } = useHttp("/member", searchParams)
 const handleReset = () => {
     searchParams.value = {
         no: '',

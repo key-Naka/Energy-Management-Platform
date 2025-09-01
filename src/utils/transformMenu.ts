@@ -1,14 +1,14 @@
-function transformMenu(nodes:any){
-    return nodes.map((node:any)=>{
-        const newNode:any={
-            label:node.name,
-            url:node.url,
+function transformMenu(nodes: any) {
+    return nodes.map((node: any) => {
+        const newNode: any = {
+            label: node.name,
+            url: node.url,
         }
-        if(node.children){
-            newNode.children=transformMenu(node.children);
+        if (node.children) {
+            newNode.children = transformMenu(node.children);
         };
         return newNode
     })
 }
 
-export {transformMenu}
+export { transformMenu }

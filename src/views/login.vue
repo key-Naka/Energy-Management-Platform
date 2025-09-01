@@ -6,11 +6,11 @@
                 <h1>能源台汽车能源综合管理平台</h1>
             </div>
             <el-form :model="ruleForm" :rules="rules" ref="ruleFormRef">
-                <el-form-item  prop="name" >
-                    <el-input placeholder="请输入用户名" v-model="ruleForm.username" prefix-icon="User"/>
+                <el-form-item prop="name">
+                    <el-input placeholder="请输入用户名" v-model="ruleForm.username" prefix-icon="User" />
                 </el-form-item>
-                <el-form-item prop="password" >
-                    <el-input placeholder="请输入密码" v-model="ruleForm.password" prefix-icon="Lock" type="password"/>
+                <el-form-item prop="password">
+                    <el-input placeholder="请输入密码" v-model="ruleForm.password" prefix-icon="Lock" type="password" />
                 </el-form-item>
                 <el-button type="primary" @click="submitForm" style="width: 100%;">登录</el-button>
             </el-form>
@@ -19,9 +19,9 @@
 </template>
 <script setup lang="ts">
 import logo from '@/assets/logo.png'
-import { reactive, ref} from 'vue'
+import { reactive, ref } from 'vue'
 import type { FormRules, FormInstance } from 'element-plus'
-import {useUserStore} from '@/store/auth'
+import { useUserStore } from '@/store/auth'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 const UserStore = useUserStore()
@@ -45,8 +45,8 @@ const rules = reactive<FormRules<RuleForm>>({
 })
 const ruleFormRef = ref<FormInstance>()
 const submitForm = () => {
-    ruleFormRef.value?.validate( async (valid:boolean) => {
-        if(valid){
+    ruleFormRef.value?.validate(async (valid: boolean) => {
+        if (valid) {
             await UserStore.login(ruleForm)
             router.push('/')
         }
@@ -61,7 +61,7 @@ const submitForm = () => {
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
-    
+
     .input {
         width: 450px;
         height: 250px;

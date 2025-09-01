@@ -17,7 +17,7 @@
     </el-card>
     <el-card class="mt">
         <el-row :gutter="20">
-            <el-col :span="6" v-for="item in dataListcopy" :key="item.id" >
+            <el-col :span="6" v-for="item in dataListcopy" :key="item.id">
                 <div class="item">
                     <div class="pic">
                         <p v-if="item.status === 1">空闲中</p>
@@ -44,7 +44,7 @@
                     <div>
                         <p class="fl ml" style="font-size: 12px;color: #999;">暂无预警</p>
                         <div class="fr" style="text-align: right;">
-                            
+
                             <el-popover placement="right" :width="300" trigger="click">
                                 <template #reference>
                                     <el-button size="small" type="primary" class="mr">使用记录</el-button>

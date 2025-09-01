@@ -208,7 +208,7 @@ const name = ref<string>("")
 const tableData = ref([])
 const loadData = async () => {
     loading.value = true
-    const { data: { list, total } } = await revenueApi({...pageInfo,name:name.value})
+    const { data: { list, total } } = await revenueApi({ ...pageInfo, name: name.value })
     setTotals(total)
     loading.value = false
     tableData.value = list.map((item: any) => ({
@@ -219,7 +219,7 @@ const loadData = async () => {
 onMounted(() => {
     loadData()
 })
-const {totals,pageInfo,handleCurrentChange,handleSizeChange,setTotals}=usePagination(loadData)
+const { totals, pageInfo, handleCurrentChange, handleSizeChange, setTotals } = usePagination(loadData)
 </script>
 <style scoped lang="less">
 .title {

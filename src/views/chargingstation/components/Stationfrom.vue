@@ -55,15 +55,15 @@
     </el-dialog>
 </template>
 <script setup lang="ts">
-import { ref, reactive,watch } from 'vue'
-import type { FormRules,FormInstance } from 'element-plus'
-import type { RowType } from '@/type/station' 
+import { ref, reactive, watch } from 'vue'
+import type { FormRules, FormInstance } from 'element-plus'
+import type { RowType } from '@/type/station'
 import { useStationStore } from '@/store/station';
 import { storeToRefs } from 'pinia';
 import { editApi } from '@/api/chargingstation';
 import { ElMessage } from 'element-plus';
 const stationStore = useStationStore()
-const {rowData}=storeToRefs(stationStore)
+const { rowData } = storeToRefs(stationStore)
 
 const ruleForm = ref<RowType>({
     name: '',
@@ -79,11 +79,11 @@ const ruleForm = ref<RowType>({
 
 })
 
-const props = defineProps({dialogVisible:{type:Boolean,required:true}})
-const emit=defineEmits(["close","reload"])
+const props = defineProps({ dialogVisible: { type: Boolean, required: true } })
+const emit = defineEmits(["close", "reload"])
 const rules = reactive<FormRules<RowType>>({
-    name:[
-        {required:true,message:"站点名称不能为空",trigger:"blur"}
+    name: [
+        { required: true, message: "站点名称不能为空", trigger: "blur" }
     ],
     id: [
         { required: true, message: '站点id不能为空', trigger: 'blur' },
@@ -116,35 +116,35 @@ const rules = reactive<FormRules<RowType>>({
 const handleCancel = () => {
     emit("close")
 }
-const formRef=ref<FormInstance>()
+const formRef = ref<FormInstance>()
 const handleConfirm = () => {
-    formRef.value?.validate(async(valid:boolean)=>{
-        if(valid){
-         const res = await editApi(ruleForm.value)
-         if(res.code==200){
-             ElMessage({
-                message: res.data,
-                type: 'success'
-             })
-             console.log(res)
-             handleCancel()
-             emit("reload")
-         }
+    formRef.value?.validate(async (valid: boolean) => {
+        if (valid) {
+            const res = await editApi(ruleForm.value)
+            if (res.code == 200) {
+                ElMessage({
+                    message: res.data,
+                    type: 'success'
+                })
+                console.log(res)
+                handleCancel()
+                emit("reload")
+            }
         }
     })
 }
-const title= ref<string>("")
-watch(()=>props.dialogVisible,()=>{
-    ruleForm.value=rowData.value
-    if(rowData.value.name){
-        ruleForm.value=rowData.value
-        title.value="编辑充电站"
-        disabled.value=true
-    }else{
-        title.value="新增充电站"
-        disabled.value=false
+const title = ref<string>("")
+watch(() => props.dialogVisible, () => {
+    ruleForm.value = rowData.value
+    if (rowData.value.name) {
+        ruleForm.value = rowData.value
+        title.value = "编辑充电站"
+        disabled.value = true
+    } else {
+        title.value = "新增充电站"
+        disabled.value = false
     }
-    ruleForm.value=rowData.value
+    ruleForm.value = rowData.value
 })
 const disabled = ref<boolean>(false)
 

@@ -32,7 +32,8 @@
     </el-card>
     <el-card class="mt">
         <el-button type="danger" :disabled="selectionList.length == 0" @click="handleBatchDelete">批量删除</el-button>
-        <el-button type="primary" icon="Download" :disabled="!selectionList.length" @click="exportRoExcel" >导出订单数据到Excel</el-button>
+        <el-button type="primary" icon="Download" :disabled="!selectionList.length"
+            @click="exportRoExcel">导出订单数据到Excel</el-button>
     </el-card>
     <el-card class="mt">
         <el-table :data="dataList" v-loading="loading" @selection-change="handleSelectChange">
@@ -66,11 +67,11 @@
     </el-card>
 </template>
 <script setup lang="ts">
-import { ref,watch} from 'vue'
+import { ref, watch } from 'vue'
 import { useHttp } from "@/hooks/useHttp"
 import { batchDeleteApi } from '@/api/operations'
 import { ElMessage } from 'element-plus'
-import { useRouter, useRoute} from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useTapsStore } from '@/store/taps'
 import * as xlsx from 'xlsx'
 import { saveAs } from 'file-saver'
@@ -146,20 +147,20 @@ const {
     dataList, loading, totals, pageInfo,
     loadData, handleSizeChange, handleCurrentChange, resetPagination
 } = useHttp<selectionType>("/orderList", searchParams.value)
-const route= useRoute()
+const route = useRoute()
 watch(
-    ()=> route.name,(to,from)=>{
-        if(to == "orders"&&from!="detail"){
+    () => route.name, (to, from) => {
+        if (to == "orders" && from != "detail") {
             loadData()
         }
     }
 )
-const exportRoExcel=()=>{
-    const ws= xlsx.utils.json_to_sheet(dataList.value)
-    const wb= xlsx.utils.book_new()
-    xlsx.utils.book_append_sheet(wb,ws,"订单列表")
-    const wbout=xlsx.write(wb,{bookType:"xlsx",type:"array"})
-    const blob= new Blob([wbout],{type:"application/octet-stream"})
-    saveAs(blob,"订单列表.xlsx")
+const exportRoExcel = () => {
+    const ws = xlsx.utils.json_to_sheet(dataList.value)
+    const wb = xlsx.utils.book_new()
+    xlsx.utils.book_append_sheet(wb, ws, "订单列表")
+    const wbout = xlsx.write(wb, { bookType: "xlsx", type: "array" })
+    const blob = new Blob([wbout], { type: "application/octet-stream" })
+    saveAs(blob, "订单列表.xlsx")
 }
 </script>

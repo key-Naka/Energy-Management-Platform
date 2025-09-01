@@ -36,14 +36,10 @@
         </div>
     </el-card>
     <el-button type="primary" class="mt mb" @click="exportToHtml">导出富文本岛html文件</el-button>
-    <Editor
-       v-model="editorContent"
-       api-key="xvbamfm2vokka8qoim9r801qtdlldskjschd51yha7zhuusp"
-      :init="{
-        language:'zh_CN',
+    <Editor v-model="editorContent" api-key="xvbamfm2vokka8qoim9r801qtdlldskjschd51yha7zhuusp" :init="{
+        language: 'zh_CN',
         plugins: 'lists link image table code help wordcount'
-      }"
-    />
+    }" />
     <el-button type="primary" @click="handleSubmit">提交文章内容</el-button>
 </template>
 <script lang="ts" setup>
@@ -81,14 +77,14 @@ const TypeList = ref<ListType>({
     publish: []
 })
 const selectedList = ref<SelectType[]>([
-     
+
 ])
 const handleclose = (num: number) => {
     selectedList.value = selectedList.value.filter((item: SelectType) => item.num !== num)
     currentIndex.value[num] = -1
 }
 const handleSubmit = () => {
-    console.log(selectedList.value,editorContent.value)
+    console.log(selectedList.value, editorContent.value)
 }
 const editorContent = ref('')
 const exportToHtml = () => {

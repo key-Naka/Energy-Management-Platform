@@ -1,221 +1,221 @@
 import Mock from "mockjs"
 Mock.setup({
-    timeout:"200-600" //设置延迟时间
+  timeout: "200-600" //设置延迟时间
 })
 //管理员权限菜单
 const menulist = [
-    {
-      name: "数据看板",
-      url: "/dashboard",
-      icon: "DataLine"
-    },
-    {
-      name: "充电站管理",
-      url: "/chargingstation",
-      icon: "Lightning",
-      children: [
-        {
-          name: "充电站监控",
-          url: "/chargingstation/monitor",
-          icon: "VideoCamera"
-        },
-        {
-          name: "营收统计",
-          url: "/chargingstation/revenue",
-          icon: "DataAnalysis"
-        },
-        {
-          name: "充电桩管理",
-          url: "/chargingstation/fault",
-          icon: "Warning"
-        }
-      ]
-    },
-    {
-      name: "电子地图",
-      url: "/map",
-      icon: "MapLocation"
-    },
-    {
-      name: "运营管理",
-      url: "/operations",
-      icon: "Files",
-      children: [
-        {
-          name: "订单管理",
-          url: "/operations/orders",
-          icon: "DocumentCopy",
-        },
-        {
-          name: "订单详情",
-          url: "/operations/detail",
-          icon: "Share"
-        },
-        {
-          name: "计费管理",
-          url: "/operations/total",
-          icon: "Money"
-        },
-      ]
-    },
-    {
-      name: "报警管理",
-      url: "/alarm",
-      icon: "Phone"
-    },
-    {
-      name: "会员卡管理",
-      url: "/equipment",
-      icon: "Magnet"
-    },
-    {
-      name: "招商管理",
-      url: "/document",
-      icon: "Document"
-    },
-    {
-      name: "系统设置",
-      url: "/system",
-      icon: "Setting"
-    },
-  
-    {
-      name: "个人中心",
-      url: "/personal",
-      icon: "User"
-    },
+  {
+    name: "数据看板",
+    url: "/dashboard",
+    icon: "DataLine"
+  },
+  {
+    name: "充电站管理",
+    url: "/chargingstation",
+    icon: "Lightning",
+    children: [
+      {
+        name: "充电站监控",
+        url: "/chargingstation/monitor",
+        icon: "VideoCamera"
+      },
+      {
+        name: "营收统计",
+        url: "/chargingstation/revenue",
+        icon: "DataAnalysis"
+      },
+      {
+        name: "充电桩管理",
+        url: "/chargingstation/fault",
+        icon: "Warning"
+      }
+    ]
+  },
+  {
+    name: "电子地图",
+    url: "/map",
+    icon: "MapLocation"
+  },
+  {
+    name: "运营管理",
+    url: "/operations",
+    icon: "Files",
+    children: [
+      {
+        name: "订单管理",
+        url: "/operations/orders",
+        icon: "DocumentCopy",
+      },
+      {
+        name: "订单详情",
+        url: "/operations/detail",
+        icon: "Share"
+      },
+      {
+        name: "计费管理",
+        url: "/operations/total",
+        icon: "Money"
+      },
+    ]
+  },
+  {
+    name: "报警管理",
+    url: "/alarm",
+    icon: "Phone"
+  },
+  {
+    name: "会员卡管理",
+    url: "/equipment",
+    icon: "Magnet"
+  },
+  {
+    name: "招商管理",
+    url: "/document",
+    icon: "Document"
+  },
+  {
+    name: "系统设置",
+    url: "/system",
+    icon: "Setting"
+  },
+
+  {
+    name: "个人中心",
+    url: "/personal",
+    icon: "User"
+  },
 ]
 //运营专员的菜单
 const menulist2 = [
-    {
-      name: "数据看板",
-      url: "/dashboard",
-      icon: "DataLine"
-    },
-    {
-      name: "充电站管理",
-      url: "/chargingstation",
-      icon: "Lightning",
-      children: [
-        {
-          name: "充电站监控",
-          url: "/chargingstation/monitor",
-          icon: "VideoCamera"
-        },
-        {
-          name: "营收统计",
-          url: "/chargingstation/revenue",
-          icon: "DataAnalysis"
-        },
-        {
-          name: "充电桩管理",
-          url: "/chargingstation/fault",
-          icon: "Warning"
-        }
-      ]
-    },
-    {
-      name: "电子地图",
-      url: "/map",
-      icon: "MapLocation"
-    },
-    {
-      name: "运营管理",
-      url: "/operations",
-      icon: "Files",
-      children: [
-        {
-          name: "订单管理",
-          url: "/operations/orders",
-          icon: "DocumentCopy",
-        },
-        {
-          name: "订单详情",
-          url: "/operations/detail",
-          icon: "Share"
-        },
-        {
-          name: "计费管理",
-          url: "/operations/total",
-          icon: "Money"
-        },
-      ]
-    },
-    {
-      name: "报警管理",
-      url: "/alarm",
-      icon: "Phone"
-    },
-    {
-      name: "会员卡管理",
-      url: "/equipment",
-      icon: "Magnet"
-    },  
-    {
-      name: "个人中心",
-      url: "/personal",
-      icon: "User"
-    },
+  {
+    name: "数据看板",
+    url: "/dashboard",
+    icon: "DataLine"
+  },
+  {
+    name: "充电站管理",
+    url: "/chargingstation",
+    icon: "Lightning",
+    children: [
+      {
+        name: "充电站监控",
+        url: "/chargingstation/monitor",
+        icon: "VideoCamera"
+      },
+      {
+        name: "营收统计",
+        url: "/chargingstation/revenue",
+        icon: "DataAnalysis"
+      },
+      {
+        name: "充电桩管理",
+        url: "/chargingstation/fault",
+        icon: "Warning"
+      }
+    ]
+  },
+  {
+    name: "电子地图",
+    url: "/map",
+    icon: "MapLocation"
+  },
+  {
+    name: "运营管理",
+    url: "/operations",
+    icon: "Files",
+    children: [
+      {
+        name: "订单管理",
+        url: "/operations/orders",
+        icon: "DocumentCopy",
+      },
+      {
+        name: "订单详情",
+        url: "/operations/detail",
+        icon: "Share"
+      },
+      {
+        name: "计费管理",
+        url: "/operations/total",
+        icon: "Money"
+      },
+    ]
+  },
+  {
+    name: "报警管理",
+    url: "/alarm",
+    icon: "Phone"
+  },
+  {
+    name: "会员卡管理",
+    url: "/equipment",
+    icon: "Magnet"
+  },
+  {
+    name: "个人中心",
+    url: "/personal",
+    icon: "User"
+  },
 ]
 //登录接口
-Mock.mock("https://www.demo.com/login","post",(options:any)=>{
-    const {username,password}= JSON.parse(options.body) ;
-    if(username==="admin"&&password==="admin666"){
-        return {
-            code:200,
-            message:"登陆成功",
-            data:{
-                token:"admintokenkkljbuo2w9xla2",
-                user:{
-                    username:"赖军",
-                    roles:["admin"],
-                },
-                menulist
-            }
-        }
-    }else if(username==="user"&&password==="user666"){
-        return {
-            code:200,
-            message:"登陆成功",
-            data:{
-                token:"usertokenkkljbuo2w9xla2",
-                user:{
-                    username:"江霞",
-                    roles:["user"]
-                },
-                menulist:menulist2
-            }
-        }
-    }else{
-        return {
-            code:401,
-            message:"用户名或者密码有误"
-        }
-    } 
+Mock.mock("https://www.demo.com/login", "post", (options: any) => {
+  const { username, password } = JSON.parse(options.body);
+  if (username === "admin" && password === "admin666") {
+    return {
+      code: 200,
+      message: "登陆成功",
+      data: {
+        token: "admintokenkkljbuo2w9xla2",
+        user: {
+          username: "赖军",
+          roles: ["admin"],
+        },
+        menulist
+      }
+    }
+  } else if (username === "user" && password === "user666") {
+    return {
+      code: 200,
+      message: "登陆成功",
+      data: {
+        token: "usertokenkkljbuo2w9xla2",
+        user: {
+          username: "江霞",
+          roles: ["user"]
+        },
+        menulist: menulist2
+      }
+    }
+  } else {
+    return {
+      code: 401,
+      message: "用户名或者密码有误"
+    }
+  }
 })
 
 //echart图表接口 折线图
-Mock.mock("https://www.demo.com/chartData","get",()=>{
+Mock.mock("https://www.demo.com/chartData", "get", () => {
   return {
-    code:200,
-    message:"操作成功",
-    data:{
-      list:[
-        {name:"充电量",data:[20, 50, 30, 70, 60, 80, 40, 60, 50]},
-        {name:"充电时长",data:[40, 60, 50, 80, 70, 90, 60, 70, 80]},
-        {name:"充电功率",data:[30, 40, 60, 50, 70, 20, 30, 40, 60]}
+    code: 200,
+    message: "操作成功",
+    data: {
+      list: [
+        { name: "充电量", data: [20, 50, 30, 70, 60, 80, 40, 60, 50] },
+        { name: "充电时长", data: [40, 60, 50, 80, 70, 90, 60, 70, 80] },
+        { name: "充电功率", data: [30, 40, 60, 50, 70, 20, 30, 40, 60] }
       ]
     }
   }
 })
 
 ////echarts图表数据接口2 饼图
-Mock.mock("https://www.demo.com/chartData2",'get',()=>{
+Mock.mock("https://www.demo.com/chartData2", 'get', () => {
   return {
     code: 200,
     message: '操作成功',
     data: {
-      list:[
+      list: [
         { value: 35, name: '充电桩' },  // 数据值和名称
         { value: 30, name: '充电站' },
         { value: 25, name: '充电杆' }
@@ -224,7 +224,7 @@ Mock.mock("https://www.demo.com/chartData2",'get',()=>{
   };
 })
 //echarts图表数据接口3 雷达图
-Mock.mock("https://www.demo.com/chartData3",'get',()=>{
+Mock.mock("https://www.demo.com/chartData3", 'get', () => {
   return {
     code: 200,
     message: '操作成功',
@@ -646,17 +646,17 @@ Mock.mock("https://www.demo.com/stationList", 'post', (options: any) => {
     code: 200,
     success: true,
     data: {
-      list:paginatedItems,
+      list: paginatedItems,
       total
     },
-    
+
   };
 });
 
 //新增/编辑充电站
 Mock.mock("https://www.demo.com/station/edit", 'post', (options: any) => {
   const res: any = JSON.parse(options.body);
-  console.log("新增/编辑充电站接口收到数据：",res)
+  console.log("新增/编辑充电站接口收到数据：", res)
   return {
     code: 200,
     success: true,
@@ -681,14 +681,14 @@ Mock.mock("https://www.demo.com/revenueChart", "get", () => {
     code: 200,
     success: true,
     data: {
-      list:[
+      list: [
         {
-          name:"销售",
-          data:[60, 40, 120, 140, 160, 80, 140]
+          name: "销售",
+          data: [60, 40, 120, 140, 160, 80, 140]
         },
         {
-          name:"访问量",
-          data:[600, 400, 600, 700, 800, 400, 700]
+          name: "访问量",
+          data: [600, 400, 600, 700, 800, 400, 700]
         },
 
       ]
@@ -1122,7 +1122,7 @@ Mock.mock("https://www.demo.com/revenueList", 'post', (options: any) => {
   chargingStation2 = originalChargingStation2
   const { name = "", page = 1, pageSize = 10 } = options.body ? JSON.parse(options.body) : {}
   // 根据条件过滤数据
-  console.log("营收统计表格接口",name,page,pageSize)
+  console.log("营收统计表格接口", name, page, pageSize)
   if (name) {
     chargingStation2 = chargingStation2.filter(item => item.name.includes(name));
   }
@@ -1133,10 +1133,10 @@ Mock.mock("https://www.demo.com/revenueList", 'post', (options: any) => {
   return {
     code: 200,
     success: true,
-    data:{
-      list:paginatedItems,
+    data: {
+      list: paginatedItems,
       total,
-    }  
+    }
   };
 });
 
@@ -1147,17 +1147,18 @@ let chargingPile = [
     id: "VXZ10001",
     name: "北京西单充电站",
     list: [
-      { id: "CD1001", voltage: "314v", current: "212.2A", power: "21KW", tem: "32°c", status: 1,
-        record:[
-          {time:"12:08:17",msg:"充电80度，消费80元"},
-          {time:"13:12:09",msg:"充电50度，消费50元"},
-          {time:"13:15:22",msg:"充电60度，消费60元"},
-          {time:"16:22:33",msg:"充电70度，消费70元"},
-          {time:"17:27:17",msg:"充电90度，消费90元"},
-          {time:"18:08:33",msg:"充电100度，消费100元"},
+      {
+        id: "CD1001", voltage: "314v", current: "212.2A", power: "21KW", tem: "32°c", status: 1,
+        record: [
+          { time: "12:08:17", msg: "充电80度，消费80元" },
+          { time: "13:12:09", msg: "充电50度，消费50元" },
+          { time: "13:15:22", msg: "充电60度，消费60元" },
+          { time: "16:22:33", msg: "充电70度，消费70元" },
+          { time: "17:27:17", msg: "充电90度，消费90元" },
+          { time: "18:08:33", msg: "充电100度，消费100元" },
         ]
-    
-    },//1空闲 2充电中 3连接中 4排队中 5被预约 6故障/离线
+
+      },//1空闲 2充电中 3连接中 4排队中 5被预约 6故障/离线
       { id: "CD1002", voltage: "314v", current: "212.2A", power: "21KW", tem: "29°c", status: 2, percent: "70%" },
       { id: "CD1003", voltage: "314v", current: "212.2A", power: "21KW", tem: "32°c", status: 1 },
       { id: "CD1004", voltage: "314v", current: "212.2A", power: "21KW", tem: "32°c", status: 2, percent: "70%" },
@@ -1212,7 +1213,7 @@ let chargingPile = [
       { id: "CD1007", voltage: "314v", current: "212.2A", power: "21KW", tem: "32°c", status: 6 },
       { id: "CD1008", voltage: "314v", current: "212.2A", power: "21KW", tem: "32°c", status: 3, percent: "70%" },
       { id: "CD1009", voltage: "314v", current: "212.2A", power: "21KW", tem: "32°c", status: 1 },
-     
+
       { id: "CD1014", voltage: "314v", current: "212.2A", power: "21KW", tem: "32°c", status: 5 },
       { id: "CD1015", voltage: "314v", current: "212.2A", power: "21KW", tem: "32°c", status: 2 },
       { id: "CD1016", voltage: "314v", current: "212.2A", power: "21KW", tem: "32°c", status: 3, percent: "70%" },
@@ -2175,7 +2176,7 @@ Mock.mock('https://www.demo.com/orderList', 'post', (options: any) => {
         'startTime': "08:00:23",//开始时间
         'endTime': "09:10:11",//结束时间
         "equipmentNo|1": ['B109', 'C227', 'C106', "D158"],//设备编号
-        'money|1': [66.5,88.9,22.7,36.5,42.0],//金额
+        'money|1': [66.5, 88.9, 22.7, 36.5, 42.0],//金额
         'pay|1': ["微信", "支付宝", "储值卡",],//支付方式
         'status|1': [2, 3, 4],//订单状态
       }],
@@ -2189,7 +2190,7 @@ Mock.mock('https://www.demo.com/orderList', 'post', (options: any) => {
 //订单管理-批量删除接口
 Mock.mock('https://www.demo.com/batchDelete', "post", (options: any) => {
   const { order } = JSON.parse(options.body)
-  console.log("订单管理批量删除接口",JSON.stringify(order) )
+  console.log("订单管理批量删除接口", JSON.stringify(order))
   return {
     code: 200,
     message: "成功",
@@ -2439,14 +2440,14 @@ Mock.mock('https://www.demo.com/alarmList', "get", () => {
 })
 
 //会员卡管理接口
-Mock.mock('https://www.demo.com/member', 'post', (req:any) => {
-  const { page, pageSize,no,tel,name } = JSON.parse(req.body);
-  console.log("会员管理接口",page, pageSize,no,tel,name)
+Mock.mock('https://www.demo.com/member', 'post', (req: any) => {
+  const { page, pageSize, no, tel, name } = JSON.parse(req.body);
+  console.log("会员管理接口", page, pageSize, no, tel, name)
   return {
     "code": 200,
     "message": "操作成功",
     data: Mock.mock({
-      [`list|${pageSize}`]:[{
+      [`list|${pageSize}`]: [{
         'memberCardNumber': '@id',  // 会员卡号
         'cardType|1': ["普通卡", "VIP卡", "季卡"],  // 卡类型
         'issueDate': '@date("yyyy-MM-dd")',  // 开卡日期
@@ -2454,34 +2455,34 @@ Mock.mock('https://www.demo.com/member', 'post', (req:any) => {
         'holderPhone': /^1[3-9]\d{9}$/,  // 持有人电话
         'cardBalance': '@float(100, 10000, 2, 2)',  // 卡余额
         'transactionRecords|1-5': [{  // 消费记录
-            'transactionDate|1': ["2024-02-18","2024-04-08","2024-10-03","2024-10-15"],  // 消费日期
-            'transactionAmount': '@float(10, 500, 2, 2)',  // 消费金额
-            'transactionType|1': ["充电扣款", "服务费扣款", "停车费扣款", "其他"]  // 消费类型
+          'transactionDate|1': ["2024-02-18", "2024-04-08", "2024-10-03", "2024-10-15"],  // 消费日期
+          'transactionAmount': '@float(10, 500, 2, 2)',  // 消费金额
+          'transactionType|1': ["充电扣款", "服务费扣款", "停车费扣款", "其他"]  // 消费类型
         }],
         'validUntil': '@date("yyyy-MM-dd")'  // 有效期至
-    }],
-    total:53
+      }],
+      total: 53
     })
   }
 });
 
 
 //招商管理分类列表接口
-Mock.mock('https://www.demo.com/document',"get",()=>{
+Mock.mock('https://www.demo.com/document', "get", () => {
   return {
-    code:200,
-    message:"操作成功",
-    data:{
-      type:["招商类","广告类","公告类","提示类","日常类","告警类","其他"],//文章类型
-      important:["一级","二级","三级","四级"],//重要程度
-      publish:["站内信","公众号","小程序","H5","官网"]//发布渠道
+    code: 200,
+    message: "操作成功",
+    data: {
+      type: ["招商类", "广告类", "公告类", "提示类", "日常类", "告警类", "其他"],//文章类型
+      important: ["一级", "二级", "三级", "四级"],//重要程度
+      publish: ["站内信", "公众号", "小程序", "H5", "官网"]//发布渠道
     }
   }
 })
 
 // 自定义生成随机账号函数
 Mock.Random.extend({
-  account: function() {
+  account: function () {
     const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     const length = Mock.mock('@natural(6, 10)');
     let result = '';
@@ -2492,24 +2493,24 @@ Mock.Random.extend({
   }
 })
 //权限设置页面
-Mock.mock('https://www.demo.com/permissionList','post',(req:any)=>{
-  const {pageSize} = JSON.parse(req.body);
-  console.log("权限设置接口收到参数",JSON.parse(req.body)) 
-return {
-    code:200,
-    message:"操作成功",
-    data:Mock.mock({
-      [`list|${pageSize}`]:[{
+Mock.mock('https://www.demo.com/permissionList', 'post', (req: any) => {
+  const { pageSize } = JSON.parse(req.body);
+  console.log("权限设置接口收到参数", JSON.parse(req.body))
+  return {
+    code: 200,
+    message: "操作成功",
+    data: Mock.mock({
+      [`list|${pageSize}`]: [{
         'name': '@cname',  // 姓名
         'account': '@account',//账号
         'phone': /^1[3-9]\d{9}$/,  // 电话
         'idNo': '@id',  // 身份证号
-        'position|1':["客服专员",'客服经理','市场专员',"市场经理","运营专员","运营经理","技术工程师","技术经理","Boss"],//职位
-        'department|1':['总裁办','技术部','市场部','维修部','运营部','客服部'],//所属部门
-        "pageAuthority|1":['admin','manager','user','自定义权限'],//页面权限
-        'btnAuthority|1':['add','delete','edit','all','自定义权限'],//按钮权限
-    }],
-    total:41
+        'position|1': ["客服专员", '客服经理', '市场专员', "市场经理", "运营专员", "运营经理", "技术工程师", "技术经理", "Boss"],//职位
+        'department|1': ['总裁办', '技术部', '市场部', '维修部', '运营部', '客服部'],//所属部门
+        "pageAuthority|1": ['admin', 'manager', 'user', '自定义权限'],//页面权限
+        'btnAuthority|1': ['add', 'delete', 'edit', 'all', '自定义权限'],//按钮权限
+      }],
+      total: 41
     })
   }
 })
@@ -2563,27 +2564,27 @@ const userMenulist = [
   },
 ]
 //获取当前用户权限
-Mock.mock("https://www.demo.com/userAuth","post",(req:any)=>{
- //console.log(234,req.body)
- const {pageAuthority}=JSON.parse(req.body)
-  console.log("后端收到当前权限",pageAuthority)
+Mock.mock("https://www.demo.com/userAuth", "post", (req: any) => {
+  //console.log(234,req.body)
+  const { pageAuthority } = JSON.parse(req.body)
+  console.log("后端收到当前权限", pageAuthority)
   return {
-    code:200,
-    message:"操作成功",
-    data:{
-      list:pageAuthority=="user"? userMenulist:(pageAuthority=="manager"?menulist2:menulist),
-      btn:pageAuthority=="user"?['add']:(pageAuthority=="manager"?['add',"edit"]:['add',"edit","all","delete"])
+    code: 200,
+    message: "操作成功",
+    data: {
+      list: pageAuthority == "user" ? userMenulist : (pageAuthority == "manager" ? menulist2 : menulist),
+      btn: pageAuthority == "user" ? ['add'] : (pageAuthority == "manager" ? ['add', "edit"] : ['add', "edit", "all", "delete"])
     }
   }
 })
 
 //权限设置接口
-Mock.mock("https://www.demo.com/setAuth","post",(req:any)=>{
-  const {btnList,pageList,account}=JSON.parse(req.body)
-  console.log("权限设置接口修改账号权限",account,btnList,pageList)
-  return{
-    code:200,
-    message:"操作成功",
-    data:null
+Mock.mock("https://www.demo.com/setAuth", "post", (req: any) => {
+  const { btnList, pageList, account } = JSON.parse(req.body)
+  console.log("权限设置接口修改账号权限", account, btnList, pageList)
+  return {
+    code: 200,
+    message: "操作成功",
+    data: null
   }
 })

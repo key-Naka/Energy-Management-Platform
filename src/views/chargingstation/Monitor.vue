@@ -72,43 +72,44 @@
                     <el-button type="primary" size="small" @click="edit(scope.row)">编辑</el-button>
                     <el-popconfirm title="确定要删除当前站点吗？">
                         <template #reference>
-                            <el-button type="danger" size="small" @confirm="handleDelete(scope.row.id)" >删除</el-button>
+                            <el-button type="danger" size="small" @confirm="handleDelete(scope.row.id)">删除</el-button>
                         </template>
                     </el-popconfirm>
                 </template>
             </el-table-column>
         </el-table>
-        <el-pagination class="mt mb" style="float: right;" v-model:current-page="pageInfo.page" v-model:page-size="pageInfo.pageSize"
-            :page-sizes="[10, 20, 30, 40]" layout="sizes, prev, pager, next, jumper,total" :total="totals"
-            @size-change="handleSizeChange" @current-change="handleCurrentChange" background />
+        <el-pagination class="mt mb" style="float: right;" v-model:current-page="pageInfo.page"
+            v-model:page-size="pageInfo.pageSize" :page-sizes="[10, 20, 30, 40]"
+            layout="sizes, prev, pager, next, jumper,total" :total="totals" @size-change="handleSizeChange"
+            @current-change="handleCurrentChange" background />
     </el-card>
-    <Stationfrom :dialog-visible="visible" @close="visible=false" @reload="loadData" />
+    <Stationfrom :dialog-visible="visible" @close="visible = false" @reload="loadData" />
 </template>
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue';
-import { listApi, deleteApi} from '@/api/chargingstation';
+import { listApi, deleteApi } from '@/api/chargingstation';
 import Stationfrom from './components/Stationfrom.vue';
 import type { RowType } from '@/type/station';
 import { useStationStore } from '@/store/station';
 import { ElMessage } from 'element-plus';
 const select = ref('name')
-const tableData = ref<RowType[]|[]>([])
+const tableData = ref<RowType[] | []>([])
 const stationStore = useStationStore()
-const {setRowData}=stationStore
+const { setRowData } = stationStore
 const formParams = reactive({
     input: "",
     value: 1
 })
 const totals = ref<number>(0)
 const pageInfo = reactive({
-    page:1,
-    pageSize:10
+    page: 1,
+    pageSize: 10
 
 })
 const loading = ref<boolean>(false)
 const loadData = async () => {
     loading.value = true
-    const { data: { list, total } } = await listApi({ ...pageInfo, status: formParams.value,[select.value]:formParams.input })
+    const { data: { list, total } } = await listApi({ ...pageInfo, status: formParams.value, [select.value]: formParams.input })
     loading.value = false
     tableData.value = list
     totals.value = total
@@ -135,11 +136,11 @@ const handleCurrentChange = (page: number) => {
 }
 
 const visible = ref<boolean>(false)
-const edit=(row:RowType)=>{
+const edit = (row: RowType) => {
     setRowData(row)
-    visible.value=true
+    visible.value = true
 }
-const handleAdd=()=>{
+const handleAdd = () => {
     setRowData({
         name: '',
         id: '',
@@ -152,15 +153,15 @@ const handleAdd=()=>{
         person: '',
         tel: ''
     })
-    visible.value=true
+    visible.value = true
 }
-const handleDelete =async (id: string) => {
+const handleDelete = async (id: string) => {
     const res = await deleteApi(id)
     if (res.code == 200) {
         ElMessage({
             message: res.data,
             type: 'success'
-        })   
+        })
         console.log(res.data);
     }
     loadData()

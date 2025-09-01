@@ -1,34 +1,36 @@
-<template> 
-    <el-container>
+<template>
+   <el-container>
       <el-aside width="200px">
          <Menu></Menu>
       </el-aside>
       <el-container>
-        <el-header>
-          <TopHeader></TopHeader>
-        </el-header>
-        <el-main>
-          <TabsLayout></TabsLayout>
-        </el-main>
+         <el-header>
+            <TopHeader></TopHeader>
+         </el-header>
+         <el-main>
+            <TabsLayout></TabsLayout>
+         </el-main>
       </el-container>
-    </el-container>
+   </el-container>
 </template>
 <script setup>
 import Menu from '@/components/navMenu/Menu.vue';
 import TopHeader from '@/components/TopHeader/TopHeader.vue';
 import TabsLayout from './TabsLayout.vue';
 </script>
-<style lang="less" scoped> 
-   .el-aside {
-      height: 100vh;
-      background-color:white;
-      box-shadow: 10px 0 8px -2px #bebebe;
-   }
-   .el-header {
-      padding: 0 !important;
-   }
-   .el-main {
-      height: 80vh;
-      overflow: auto;
-   }
+<style lang="less" scoped>
+.el-aside {
+   height: 100vh;
+   background-color: white;
+   box-shadow: 10px 0 8px -2px #bebebe;
+}
+
+.el-header {
+   padding: 0 !important;
+}
+
+.el-main {
+   height: 80vh;
+   overflow: auto;
+}
 </style>

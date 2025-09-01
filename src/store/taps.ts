@@ -5,7 +5,7 @@ import type { MenuType } from '@/type/user/index'
 
 export const useTapsStore = defineStore('taps', () => {
     const taps = ref<MenuType[]>([])
-    const currentTap = ref<{name: string, url: string}>({
+    const currentTap = ref<{ name: string, url: string }>({
         name: "数据看板",
         url: "/dashboard",
     })
@@ -24,14 +24,14 @@ export const useTapsStore = defineStore('taps', () => {
             url
         }
     }
-    const removeTap =(name:string)=>{
-        if(taps.value.findIndex(taps=> taps.name === name)-1){
+    const removeTap = (name: string) => {
+        if (taps.value.findIndex(taps => taps.name === name) - 1) {
             return
-        }else{
-            currentTap.value =taps.value[taps.value.findIndex(taps=> taps.name === name)-1]
+        } else {
+            currentTap.value = taps.value[taps.value.findIndex(taps => taps.name === name) - 1]
         }
         taps.value = taps.value.filter((tap) => tap.name !== name)
-        
+
     }
     return { taps, addTab, currentTap, setcurrentTap, removeTap }
 })

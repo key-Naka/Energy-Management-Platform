@@ -1,16 +1,16 @@
 import * as echarts from 'echarts';
-import {ref,markRaw,onBeforeUnmount,onMounted} from 'vue';
-import type {Ref} from 'vue';
+import { ref, markRaw, onBeforeUnmount, onMounted } from 'vue';
+import type { Ref } from 'vue';
 
-export const useCharts = (chartRef:Ref<HTMLElement|null>,setChartData:any) => {
-    const chartInstance = ref<echarts.ECharts|null>(null);
-    
+export const useCharts = (chartRef: Ref<HTMLElement | null>, setChartData: any) => {
+    const chartInstance = ref<echarts.ECharts | null>(null);
+
     // 定义resize处理函数
     const handleResize = () => {
         chartInstance.value?.resize();
     }
-    
-    const initChart = async() => {
+
+    const initChart = async () => {
         try {
             if (chartRef.value) {
                 // 确保旧的实例被正确销毁
@@ -27,12 +27,12 @@ export const useCharts = (chartRef:Ref<HTMLElement|null>,setChartData:any) => {
             console.error('Chart initialization failed:', error);
         }
     }
-    
+
     onMounted(() => {
         initChart();
         window.addEventListener('resize', handleResize);
     })
-    
+
     onBeforeUnmount(() => {
         window.removeEventListener('resize', handleResize);
         if (chartInstance.value) {
