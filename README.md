@@ -16,5 +16,15 @@
 <img width="1920" height="987" alt="image" src="https://github.com/user-attachments/assets/4e0fdb0b-60fa-4e47-bde7-865ae0b66367" />
 计费管理页
 <img width="1920" height="977" alt="image" src="https://github.com/user-attachments/assets/0d59dc3f-53aa-4ecc-8a58-c45ad8c6bb7f" />
+报警管理页
+<img width="1920" height="989" alt="image" src="https://github.com/user-attachments/assets/b7523013-af16-43b3-9d99-77d2b9960708" />
+会员管理页
+<img width="1920" height="993" alt="image" src="https://github.com/user-attachments/assets/b1cd2ae5-ea43-4a30-bc0d-1520f9c12077" />
+招商管理页
+<img width="1920" height="990" alt="image" src="https://github.com/user-attachments/assets/b9209a53-f34b-4284-bf2b-e21224a2a0d2" />
+权限设置页
+<img width="1920" height="996" alt="image" src="https://github.com/user-attachments/assets/c051a2ba-5a94-469d-8ccf-64459bb71eb2" />
+个人中心页
+<img width="1920" height="990" alt="image" src="https://github.com/user-attachments/assets/bafcc6d5-77e3-4fe9-91bf-42e4e05eec03" />
 
 
