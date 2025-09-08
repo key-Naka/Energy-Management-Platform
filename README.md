@@ -3,7 +3,7 @@
 登录页面
 <img width="1920" height="994" alt="image" src="https://github.com/user-attachments/assets/9972b86b-5eae-412c-8de9-b3d4284ac4f5" />
 数据看板页
-![Uploading image.png…]()
+<img width="1920" height="990" alt="image" src="https://github.com/user-attachments/assets/4eb4ecad-ce0a-45fe-b190-49806e773545" />
 充电桩监控页
 <img width="1920" height="993" alt="image" src="https://github.com/user-attachments/assets/e5e09473-ccbb-413a-a2d0-9e3f3dba66b3" />
 营收统计页
