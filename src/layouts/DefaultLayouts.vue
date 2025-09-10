@@ -17,6 +17,10 @@
 import Menu from '@/components/navMenu/Menu.vue';
 import TopHeader from '@/components/TopHeader/TopHeader.vue';
 import TabsLayout from './TabsLayout.vue';
+
+
+
+
 </script>
 <style lang="less" scoped>
 .el-aside {

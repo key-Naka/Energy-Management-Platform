@@ -4,7 +4,7 @@
             <el-card>
                 <div class="title">
                     <h3>今日设备运行状态</h3>
-                    <p class="ml">更新时间:2024年8月31日</p>
+                    <p class="ml">更新时间:2025年8月31日</p>
                     <el-icon color="#86909c" style="margin-left: 5px;">
                         <Refresh />
                     </el-icon>
